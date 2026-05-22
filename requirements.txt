@@ -7,4 +7,6 @@ typer
 rich
 httpx
 duckduckgo-search
+ddgs
 ollama
+streamlit

@@ -1,0 +1,326 @@
+[
+  {
+    "id": "FAIL-001",
+    "error_type": "INVALID_MIME_TYPE",
+    "error_text": "Refused to execute script due to MIME type",
+    "root_cause": "Incorrect content-type headers configured for static assets.",
+    "fix": "Configure proper MIME types on the server or S3 bucket metadata.",
+    "platform": "AWS S3",
+    "node_version": "20",
+    "tags": [
+      "mime-type",
+      "frontend",
+      "s3"
+    ]
+  },
+
+  {
+    "id": "FAIL-002",
+    "error_type": "MODULE_NOT_FOUND",
+    "error_text": "Cannot find module 'dotenv'",
+    "root_cause": "Missing npm dependency.",
+    "fix": "Run npm install dotenv.",
+    "platform": "GitHub Actions",
+    "node_version": "18",
+    "tags": [
+      "npm",
+      "dependency"
+    ]
+  },
+
+  {
+    "id": "FAIL-003",
+    "error_type": "ERR_REQUIRE_ESM",
+    "error_text": "Cannot use import statement outside module",
+    "root_cause": "ESM/CommonJS incompatibility.",
+    "fix": "Add type=module in package.json.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "esm",
+      "commonjs"
+    ]
+  }
+,
+  {
+    "id": "FAIL-021",
+    "error_type": "NODE_VERSION_MISMATCH",
+    "error_text": "SyntaxError: Unexpected token '??='",
+    "root_cause": "Application built with newer Node.js syntax but runtime uses older Node version.",
+    "fix": "Upgrade runtime version or transpile application.",
+    "platform": "AWS Lambda",
+    "node_version": "14",
+    "tags": [
+      "nodejs",
+      "runtime",
+      "version-mismatch",
+      "deployment"
+    ]
+  },
+  {
+    "id": "FAIL-022",
+    "error_type": "MODULE_NOT_FOUND",
+    "error_text": "Error: Cannot find module 'dotenv'",
+    "root_cause": "Dependency missing from deployment package.",
+    "fix": "Install dependency and rebuild deployment artifact.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "nodejs",
+      "module-not-found",
+      "dependency"
+    ]
+  },
+  {
+    "id": "FAIL-023",
+    "error_type": "ESM_COMMONJS_CONFLICT",
+    "error_text": "Cannot use import statement outside module",
+    "root_cause": "ESM and CommonJS configuration conflict.",
+    "fix": "Add type=module or convert imports to require.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "nodejs",
+      "esm",
+      "commonjs"
+    ]
+  },
+  {
+    "id": "FAIL-024",
+    "error_type": "HANDLER_NOT_FOUND",
+    "error_text": "Runtime.HandlerNotFound: index.handler is undefined",
+    "root_cause": "Incorrect Lambda handler configuration.",
+    "fix": "Verify exported handler name and Lambda settings.",
+    "platform": "AWS Lambda",
+    "node_version": "18",
+    "tags": [
+      "aws",
+      "lambda",
+      "handler"
+    ]
+  },
+  {
+    "id": "FAIL-025",
+    "error_type": "DEPENDENCY_VERSION_CONFLICT",
+    "error_text": "npm ERR! peer dep missing",
+    "root_cause": "Incompatible dependency versions.",
+    "fix": "Align package versions and reinstall modules.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "npm",
+      "dependency",
+      "version-conflict"
+    ]
+  },
+  {
+    "id": "FAIL-026",
+    "error_type": "TYPESCRIPT_BUILD_FAILURE",
+    "error_text": "TS2307: Cannot find module './config'",
+    "root_cause": "Incorrect import path or missing compiled files.",
+    "fix": "Check tsconfig and include compiled output.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "typescript",
+      "build",
+      "module"
+    ]
+  },
+  {
+    "id": "FAIL-027",
+    "error_type": "NATIVE_MODULE_ERROR",
+    "error_text": "node-gyp rebuild failed",
+    "root_cause": "Native module compiled on incompatible OS.",
+    "fix": "Build dependencies on Amazon Linux environment.",
+    "platform": "AWS Lambda",
+    "node_version": "18",
+    "tags": [
+      "native-module",
+      "node-gyp",
+      "deployment"
+    ]
+  },
+  {
+    "id": "FAIL-028",
+    "error_type": "MEMORY_LIMIT_EXCEEDED",
+    "error_text": "JavaScript heap out of memory",
+    "root_cause": "Insufficient Lambda memory allocation.",
+    "fix": "Increase memory size or optimize startup.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "memory",
+      "performance",
+      "aws"
+    ]
+  },
+  {
+    "id": "FAIL-029",
+    "error_type": "TIMEOUT_ERROR",
+    "error_text": "Task timed out after 30.00 seconds",
+    "root_cause": "Application startup exceeds Lambda timeout.",
+    "fix": "Increase timeout or optimize initialization logic.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "timeout",
+      "performance",
+      "lambda"
+    ]
+  },
+  {
+    "id": "FAIL-030",
+    "error_type": "ENV_VARIABLE_MISSING",
+    "error_text": "Missing required environment variable DATABASE_URL",
+    "root_cause": "Environment variable not configured.",
+    "fix": "Add required variables in Lambda configuration.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "environment",
+      "configuration",
+      "deployment"
+    ]
+  },
+  {
+    "id": "FAIL-031",
+    "error_type": "PACKAGE_LOCK_MISMATCH",
+    "error_text": "npm ci can only install packages with existing package-lock.json",
+    "root_cause": "Missing or outdated package-lock.json.",
+    "fix": "Commit updated lock file to repository.",
+    "platform": "AWS Lambda",
+    "node_version": "18",
+    "tags": [
+      "npm",
+      "lockfile",
+      "ci-cd"
+    ]
+  },
+  {
+    "id": "FAIL-032",
+    "error_type": "DOCKER_BUILD_FAILURE",
+    "error_text": "failed to solve with frontend dockerfile.v0",
+    "root_cause": "Invalid Dockerfile configuration.",
+    "fix": "Validate Dockerfile syntax and base image.",
+    "platform": "AWS ECS",
+    "node_version": "20",
+    "tags": [
+      "docker",
+      "container",
+      "deployment"
+    ]
+  },
+  {
+    "id": "FAIL-033",
+    "error_type": "PORT_BIND_ERROR",
+    "error_text": "Error: listen EADDRINUSE",
+    "root_cause": "Port already occupied in container.",
+    "fix": "Change application port or stop conflicting process.",
+    "platform": "AWS ECS",
+    "node_version": "18",
+    "tags": [
+      "port",
+      "network",
+      "container"
+    ]
+  },
+  {
+    "id": "FAIL-034",
+    "error_type": "DATABASE_CONNECTION_FAILURE",
+    "error_text": "ECONNREFUSED 127.0.0.1:5432",
+    "root_cause": "Database endpoint unreachable.",
+    "fix": "Verify database host and security groups.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "database",
+      "connection",
+      "network"
+    ]
+  },
+  {
+    "id": "FAIL-035",
+    "error_type": "REDIS_CONNECTION_ERROR",
+    "error_text": "Redis connection timeout",
+    "root_cause": "Redis instance inaccessible.",
+    "fix": "Check Redis endpoint and VPC configuration.",
+    "platform": "AWS Lambda",
+    "node_version": "18",
+    "tags": [
+      "redis",
+      "cache",
+      "timeout"
+    ]
+  },
+  {
+    "id": "FAIL-036",
+    "error_type": "INVALID_JSON_CONFIG",
+    "error_text": "Unexpected token } in JSON",
+    "root_cause": "Malformed JSON configuration file.",
+    "fix": "Validate JSON syntax before deployment.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "json",
+      "configuration",
+      "syntax"
+    ]
+  },
+  {
+    "id": "FAIL-037",
+    "error_type": "PERMISSION_DENIED",
+    "error_text": "EACCES: permission denied",
+    "root_cause": "Insufficient file permissions.",
+    "fix": "Update IAM role or filesystem permissions.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "permissions",
+      "iam",
+      "security"
+    ]
+  },
+  {
+    "id": "FAIL-038",
+    "error_type": "S3_ACCESS_DENIED",
+    "error_text": "AccessDenied: Access Denied",
+    "root_cause": "IAM role missing S3 permissions.",
+    "fix": "Attach required S3 policy to Lambda role.",
+    "platform": "AWS Lambda",
+    "node_version": "18",
+    "tags": [
+      "s3",
+      "iam",
+      "aws"
+    ]
+  },
+  {
+    "id": "FAIL-039",
+    "error_type": "CIRCULAR_DEPENDENCY",
+    "error_text": "Maximum call stack size exceeded",
+    "root_cause": "Circular dependency between modules.",
+    "fix": "Refactor modules to remove cyclic imports.",
+    "platform": "AWS Lambda",
+    "node_version": "20",
+    "tags": [
+      "dependency",
+      "stack-overflow",
+      "nodejs"
+    ]
+  },
+  {
+    "id": "FAIL-040",
+    "error_type": "BABEL_CONFIG_ERROR",
+    "error_text": "Unknown plugin transform-runtime",
+    "root_cause": "Missing Babel plugin dependency.",
+    "fix": "Install required Babel plugins.",
+    "platform": "AWS Lambda",
+    "node_version": "18",
+    "tags": [
+      "babel",
+      "transpiler",
+      "build"
+    ]
+  }
+]

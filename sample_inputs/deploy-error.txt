@@ -1,0 +1,11 @@
+npm ERR! code E400
+npm ERR! code E401
+npm ERR! 404 Not Found - GET https://registry.npmjs.org/express-lambda-super-wrapper-fake-plugin - Not found
+npm ERR! 404 
+npm ERR! 404  'express-lambda-super-wrapper-fake-plugin@1.0.0' is not in the npm registry.
+npm ERR! 404 
+npm ERR! 404 Note that you can also host your own private modules.
+npm ERR! 401 Unauthorized error so please check your credential 
+npm ERR! 404 See https://docs.npmjs.com/hosting-your-own-private-packages for details.
+
+Error: Process completed with exit code 1.
