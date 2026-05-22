@@ -1,0 +1,10 @@
+langchain
+langchain-openai
+langchain-ollama
+chromadb
+pyyaml
+typer
+rich
+httpx
+duckduckgo-search
+ollama
